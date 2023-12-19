@@ -9,9 +9,12 @@
     "dev": "webpack-cli serve --mode=development --env development --open --hot",
     "build": "webpack --mode=production --env production --progress",
     "lint:check": "eslint './src/**/*.{ts,tsx,js,jsx}'",
-    "lint:fix": "eslint './src/**/*.{ts,tsx,js,jsx}' --fix"
+    "lint:fix": "eslint './src/**/*.{ts,tsx,js,jsx}' --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@types/node": "20.10.5",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
@@ -28,6 +31,7 @@
     "eslint-webpack-plugin": "4.0.1",
     "fork-ts-checker-webpack-plugin": "9.0.2",
     "html-webpack-plugin": "5.6.0",
+    "husky": "^8.0.3",
     "prettier": "3.1.1",
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2",
