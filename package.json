@@ -8,9 +8,10 @@
   "scripts": {
     "dev": "webpack-cli serve --mode=development --env development --open --hot",
     "build": "webpack --mode=production --env production --progress",
-    "lint:check": "eslint './src/**/*.{ts,tsx,js,jsx}'",
-    "lint:fix": "eslint './src/**/*.{ts,tsx,js,jsx}' --fix",
+    "lint:check": "eslint . && prettier .",
+    "lint:fix": "eslint --fix . && prettier --write .",
     "test": "jest",
+    "coverage": "jest --coverage",
     "prepare": "husky install"
   },
   "devDependencies": {

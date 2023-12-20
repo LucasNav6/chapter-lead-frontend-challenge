@@ -4,11 +4,7 @@
     "sourceMap": true,
     "noImplicitAny": false,
     "target": "es5",
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
@@ -19,13 +15,8 @@
     "moduleResolution": "node",
     "downlevelIteration": true,
     "paths": {
-      "components/*": [
-        "src/components/*"
-      ]
+      "components/*": ["src/components/*"]
     }
   },
-  "include": [
-    "./src",
-    "./webpack.config.ts"
-  ]
+  "include": ["./src", "./webpack.config.ts"]
 }
