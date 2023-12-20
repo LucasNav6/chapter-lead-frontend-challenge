@@ -15,7 +15,14 @@
     "moduleResolution": "node",
     "downlevelIteration": true,
     "paths": {
-      "components/*": ["src/components/*"]
+      "@Tests/*": ["src/__tests__/*"],
+      "@Mocks/*": ["src/_mocks_/*"],
+      "@Adapters/*": ["src/adapters/*"],
+      "@Components/*": ["src/components/*"],
+      "@Models/*": ["src/models/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Routes/*": ["src/routes/*"],
+      "@Services/*": ["src/services/*"]
     }
   },
   "include": ["./src", "./webpack.config.ts"]

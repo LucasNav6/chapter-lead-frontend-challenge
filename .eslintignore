@@ -8,3 +8,4 @@ coverage/
 # Ignore specific files
 build.js
 config.js
+webpack.config.ts
