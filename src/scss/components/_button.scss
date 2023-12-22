@@ -1,0 +1,27 @@
+.component-primary-button {
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  border-radius: $border-radius;
+  border: 0.1em solid $black;
+  padding: 0.4em;
+  cursor: pointer;
+
+  &:hover {
+    outline: 0.2em solid $gray;
+  }
+}
+
+.component-secondary-button {
+  width: 100%;
+  background-color: transparent;
+  border: 0.1em solid $black;
+  color: $black;
+  border-radius: $border-radius;
+  padding: 0.4em;
+  cursor: pointer;
+
+  &:hover {
+    outline: 0.2em solid $gray;
+  }
+}

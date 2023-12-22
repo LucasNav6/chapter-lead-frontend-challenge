@@ -1,0 +1,64 @@
+// Fonts
+$font-family: "Roboto", sans-serif;
+$font-size-h1: 1.9rem;
+$font-size-h2: 1.8rem;
+$font-size-h3: 1.7rem;
+$font-size-h4: 1.6rem;
+$font-size-h5: 1.5rem;
+$font-size-h6: 1.4rem;
+$font-size-strong: 1.1rem;
+$font-size-p: 1rem;
+
+// Border Radius
+$border-radius: 0;
+
+// Weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $font-size-p;
+  font-weight: $font-weight-light;
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-bold;
+  font-family: $font-family;
+}
+
+p {
+  font-size: $font-size-p;
+  font-weight: $font-weight-light;
+  font-family: $font-family;
+}
+
+strong {
+  font-size: $font-size-strong;
+  font-weight: $font-weight-bold;
+  font-family: $font-family;
+}
+
+button {
+  font-size: $font-size-p;
+  font-weight: $font-weight-regular;
+  font-family: $font-family;
+  border-radius: $border-radius;
+  background: none;
+  border: none;
+}
+
+input {
+  width: 20rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0;
+  border-bottom: 0.1em solid $gray-dark;
+  background-color: $gray;
+  padding: 0 8px;
+}
