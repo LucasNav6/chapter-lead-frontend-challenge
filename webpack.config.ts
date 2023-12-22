@@ -5,6 +5,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const packageJson = require("./package.json");
+const Dotenv = require("dotenv-webpack");
 
 const webpackConfig = (env) => ({
   entry: "./src/index.tsx",
@@ -36,6 +37,10 @@ const webpackConfig = (env) => ({
           transpileOnly: true
         },
         exclude: /dist/
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
@@ -49,11 +54,12 @@ const webpackConfig = (env) => ({
       "process.env.VERSION": JSON.stringify(packageJson.version)
     }),
     new ForkTsCheckerWebpackPlugin(),
-    new ESLintPlugin({files: "./src/**/*.{ts,tsx,js,jsx}"})
+    new ESLintPlugin({files: "./src/**/*.{ts,tsx,js,jsx}"}),
+    new Dotenv()
   ],
   devServer: {
-    historyApiFallback: true,
-  },
+    historyApiFallback: true
+  }
 });
 
 module.exports = webpackConfig;
