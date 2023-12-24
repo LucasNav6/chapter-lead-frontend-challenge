@@ -10,9 +10,11 @@ import useShowUserMessage from "./hooks/useShowUserMessage";
 const LoginPage: React.FC = () => {
   const [userCredentials, setUserCredentials] = React.useState({email: "", password: ""});
   const [hasCredentialError, setHasCredentialError] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const {showSuccessMessage, showFailedMessage} = useShowUserMessage();
 
   const tryToSignIn = async () => {
+    setIsLoading(true);
     const user = await signInWithEmail(userCredentials.email, userCredentials.password);
     if (!user.isSuccessful) {
       showFailedMessage(user.errorMessage);
@@ -21,6 +23,7 @@ const LoginPage: React.FC = () => {
       showSuccessMessage(user.successMessage);
       setHasCredentialError(false);
     }
+    setIsLoading(false);
   };
 
   const changeUserCredentials = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,7 +61,12 @@ const LoginPage: React.FC = () => {
         />
       </form>
       <footer className="auth-footer-actions">
-        <PrimaryButton text="Sign in" type="button" onClick={async () => await tryToSignIn()} />
+        <PrimaryButton
+          text="Sign in"
+          type="button"
+          onClick={async () => await tryToSignIn()}
+          isLoading={isLoading}
+        />
       </footer>
     </AuthLayout>
   );

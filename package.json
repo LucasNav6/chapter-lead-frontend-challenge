@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "webpack-cli serve --mode=development --env development --open --hot",
     "build": "webpack --mode=production --env production --progress",
-    "lint:check": "eslint . && prettier . && stylelint 'src/**/*.scss'",
+    "lint:check": "eslint . && prettier .",
     "lint:fix": "eslint --fix . && prettier --write .",
     "lint:scss": "stylelint 'src/**/*.scss'",
     "lint:scss-fix": "stylelint 'src/**/*.scss' --fix",

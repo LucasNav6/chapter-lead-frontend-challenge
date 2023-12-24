@@ -1,9 +1,11 @@
 export interface IButton {
-  text: string;
+  text?: string;
   onClick: () => void;
   disabled?: boolean;
   loading?: boolean;
   type: "button" | "submit" | "reset";
+  isLoading?: boolean;
+  icon?: string;
 }
 
 export interface ITextInput {
