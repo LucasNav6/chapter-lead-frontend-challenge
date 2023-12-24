@@ -1,3 +1,3 @@
 export const TASK_BOARD = {
-  BOARDS_LIST: "/task-board"
+  BOARDS_LIST: "/all-projects"
 };

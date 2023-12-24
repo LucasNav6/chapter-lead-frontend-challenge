@@ -1,6 +1,6 @@
 export const AUTH_ROUTES = {
-  LOGIN: "/auth-signin",
-  REGISTER: "/auth-signup",
-  LOGOUT: "/auth-logout",
-  FORGET: "/auth-forget"
+  LOGIN: "/",
+  REGISTER: "/signup",
+  LOGOUT: "/logout",
+  FORGET: "/forget-password"
 };
