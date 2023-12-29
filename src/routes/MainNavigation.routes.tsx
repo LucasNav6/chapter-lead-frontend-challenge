@@ -5,18 +5,21 @@ import {Route} from "wouter";
 import NotFound from "@Pages/error/NotFound.page";
 
 type INotFoundRouteParams = {
-  rest: string;
+  path: string;
 };
 
 const MainNavigation = () => {
   return (
-    <div>
+    <>
       <NoProtectedRoutes />
+
       <ProtectedRoutes />
-      <Route path={"/:rest*"}>
-        {(params: INotFoundRouteParams) => <NotFound notFoundRoute={params.rest} />}
+
+      {/* Not found page */}
+      <Route path={"/:path*"}>
+        {(params: INotFoundRouteParams) => <NotFound notFoundRoute={params.path} />}
       </Route>
-    </div>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ import PrimaryButton from "@Components/buttons/primaryButton/PrimaryButton";
 import useStore from "src/storage/storage";
 import getProjectsByUser from "@Adapters/projects/getProjectsByUser";
 import {useLocation} from "wouter";
-import {TASK_BOARD} from "@Models/routes/taskBoard.routes";
+import {PROJECT} from "@Models/routes/project.routes";
 
 const TaskBoard: React.FC = () => {
   const {user_mail, user_uuid, projects, setProjects} = useStore();
@@ -59,7 +59,7 @@ const TaskBoard: React.FC = () => {
             text="New project"
             icon="uil:plus"
             type="button"
-            onClick={() => navigate(TASK_BOARD.CREATE_BOARD)}
+            onClick={() => navigate(PROJECT.LIST_PROJECT)}
           />
         </div>
       </footer>

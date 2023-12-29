@@ -1,6 +1,6 @@
 import PrimaryButton from "@Components/buttons/primaryButton/PrimaryButton";
 import SecondaryButton from "@Components/buttons/secundaryButton/SecundaryButton";
-import {TASK_BOARD} from "@Models/routes/taskBoard.routes";
+import {TASK} from "@Models/index";
 import React from "react";
 import {Project} from "src/data";
 
@@ -15,7 +15,7 @@ const Board: React.FC<IBoardProps> = ({projectData, projectId}) => {
   return (
     <a
       className={`project-board-task task-color-${generateBgColor()}`}
-      href={TASK_BOARD.TASK + "/" + projectId}
+      href={TASK.CREATE_TASK + "/" + projectId}
     >
       <strong>{projectData.name}</strong>
       <p>{projectData.description}</p>

@@ -6,7 +6,7 @@ import AuthLayout from "@Pages/layout/Auth.layout";
 import React from "react";
 import {Toaster} from "react-hot-toast";
 import useShowUserMessage from "./hooks/useShowUserMessage";
-import {TASK_BOARD} from "@Models/routes/taskBoard.routes";
+import {PROJECT} from "@Models/routes/project.routes";
 import useStore from "src/storage/storage";
 import {useLocation} from "wouter";
 
@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
       showSuccessMessage(user.successMessage);
       setUserUUID(user.data.uid || null);
       setUserMail(user.data.email);
-      navigate(TASK_BOARD.BOARDS_LIST);
+      navigate(PROJECT.LIST_PROJECT);
     }
     setIsLoading(false);
   };

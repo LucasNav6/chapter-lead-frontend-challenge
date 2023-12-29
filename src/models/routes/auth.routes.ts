@@ -1,4 +1,4 @@
-export const AUTH_ROUTES = {
+export const AUTH = {
   LOGIN: "/",
   REGISTER: "/signup",
   LOGOUT: "/logout",
