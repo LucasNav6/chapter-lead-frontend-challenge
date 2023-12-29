@@ -10,7 +10,7 @@ export interface IButton {
 
 export interface ITextInput {
   text: string;
-  name: string;
+  name?: string;
   placeholder: string;
   hasError?: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

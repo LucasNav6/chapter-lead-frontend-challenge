@@ -6,12 +6,18 @@ import AuthLayout from "@Pages/layout/Auth.layout";
 import React from "react";
 import {Toaster} from "react-hot-toast";
 import useShowUserMessage from "./hooks/useShowUserMessage";
+import {TASK_BOARD} from "@Models/routes/taskBoard.routes";
+import useStore from "src/storage/storage";
+import {useLocation} from "wouter";
 
 const LoginPage: React.FC = () => {
   const [userCredentials, setUserCredentials] = React.useState({email: "", password: ""});
   const [hasCredentialError, setHasCredentialError] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const {setUserUUID, setUserMail} = useStore();
   const {showSuccessMessage, showFailedMessage} = useShowUserMessage();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, navigate] = useLocation();
 
   const tryToSignIn = async () => {
     setIsLoading(true);
@@ -21,7 +27,9 @@ const LoginPage: React.FC = () => {
       setHasCredentialError(true);
     } else {
       showSuccessMessage(user.successMessage);
-      setHasCredentialError(false);
+      setUserUUID(user.data.uid || null);
+      setUserMail(user.data.email);
+      navigate(TASK_BOARD.BOARDS_LIST);
     }
     setIsLoading(false);
   };

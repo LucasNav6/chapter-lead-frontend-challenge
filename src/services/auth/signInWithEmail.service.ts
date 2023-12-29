@@ -13,11 +13,11 @@ const signInWithEmailOnFirebase = async (
 
     // Signed in successfully.
     const user = userCredential.user;
-    console.log(user);
 
     return {
       isSuccessful: true,
-      successMessage: "Signed in successfully."
+      successMessage: "Signed in successfully.",
+      data: user
     };
   } catch (error) {
     // Signed in failed.
