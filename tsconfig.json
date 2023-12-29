@@ -22,7 +22,8 @@
       "@Models/*": ["src/models/*"],
       "@Pages/*": ["src/pages/*"],
       "@Routes/*": ["src/routes/*"],
-      "@Services/*": ["src/services/*"]
+      "@Services/*": ["src/services/*"],
+      "@Styles/*": ["src/scss/*"],
     }
   },
   "include": ["./src", "./webpack.config.ts"]
