@@ -1,6 +1,8 @@
 import App from "@Routes/App.routes";
 import React from "react";
 import {createRoot} from "react-dom/client";
+
+// Importing the global styles
 import "@Styles/global.scss";
 
 // Get the root element of the app to render
