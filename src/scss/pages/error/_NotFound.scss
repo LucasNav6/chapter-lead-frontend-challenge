@@ -1,43 +1,38 @@
 .page404-main-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+  width: $full-width;
+  height: $full-height;
   background-image: $background-gradient;
-  padding: 1em;
 }
 
 .page404-container-container {
-  display: flex;
-  grid: 30px;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center;
   max-width: $mobile-view;
-  text-wrap: balance;
   text-align: center;
   background-color: $white;
-  padding: 4em;
+  padding: $box-padding;
+  grid: $grid-gap;
 
   p {
-    margin-top: 14px;
+    margin-top: $margin-1;
   }
 
   button {
-    margin-top: 30px;
+    margin-top: $margin-3;
   }
 }
 
 .page404-error-code {
-  font-size: 5rem;
+  font-size: $font-size-xxl;
   font-weight: $font-weight-bold;
   font-family: $font-family;
 }
 
 @media screen and (width <= $mobile-view) {
   .page404-container-container {
-    min-width: 100vw;
-    height: 100vh;
+    min-width: $full-width;
+    height: $full-height;
     justify-content: center;
   }
 }
+

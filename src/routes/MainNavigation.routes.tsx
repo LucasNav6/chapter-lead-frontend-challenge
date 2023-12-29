@@ -4,14 +4,20 @@ import NoProtectedRoutes from "./NoProtected.routes";
 import {Route} from "wouter";
 import NotFound from "@Pages/error/NotFound.page";
 
-const App = () => {
+type INotFoundRouteParams = {
+  rest: string;
+};
+
+const MainNavigation = () => {
   return (
     <div>
       <NoProtectedRoutes />
       <ProtectedRoutes />
-      <Route path="*" component={NotFound} />
+      <Route path={"/:rest*"}>
+        {(params: INotFoundRouteParams) => <NotFound notFoundRoute={params.rest} />}
+      </Route>
     </div>
   );
 };
 
-export default App;
+export default MainNavigation;

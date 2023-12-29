@@ -1,3 +1,4 @@
+//*** Fonts import ***//
 @font-face {
   font-family: Roboto;
   font-style: normal;
@@ -27,3 +28,25 @@
     format("woff2");
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+
+//*** Fonts variables ***//
+
+// Fonts family
+$font-family: "Roboto", sans-serif;
+
+// Fonts sizes
+$font-size-xxl: 5.4rem;
+$font-size-h1: 1.6rem;
+$font-size-h2: 1.5rem;
+$font-size-h3: 1.4rem;
+$font-size-h4: 1.3rem;
+$font-size-h5: 1.2rem;
+$font-size-h6: 1.1rem;
+$font-size-strong: 1.1rem;
+$font-size-p: 1rem;
+$font-size-small: 0.8rem;
+
+// Fonts weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;

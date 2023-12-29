@@ -22,7 +22,7 @@ const webpackConfig = (env) => ({
       "@Pages": path.resolve(__dirname, "src/pages/"),
       "@Routes": path.resolve(__dirname, "src/routes/"),
       "@Services": path.resolve(__dirname, "src/services/"),
-      "@Styles": path.resolve(__dirname, "src/scss/"),
+      "@Styles": path.resolve(__dirname, "src/scss/")
     }
   },
   output: {

@@ -1,7 +1,11 @@
 import PrimaryButton from "@Components/buttons/primaryButton/PrimaryButton";
 import React from "react";
 
-const NotFound: React.FC = () => {
+interface INotFoundProps {
+  notFoundRoute: string;
+}
+
+const NotFound: React.FC<INotFoundProps> = ({notFoundRoute}) => {
   return (
     <section className="page404-main-container">
       <article className="page404-container-container">
@@ -12,7 +16,7 @@ const NotFound: React.FC = () => {
           width={100}
         />
         <h1 className="page404-error-code">404</h1>
-        <strong>Page not found</strong>
+        <strong>Page &ldquo;{notFoundRoute}&rdquo; not found</strong>
         <p>Oops! It looks like the page you are looking for is not here</p>
         <PrimaryButton text="Go back" type="button" onClick={() => {}} />
       </article>

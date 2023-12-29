@@ -1,4 +1,4 @@
-import App from "@Routes/App.routes";
+import MainNavigation from "@Routes/MainNavigation.routes";
 import React from "react";
 import {createRoot} from "react-dom/client";
 
@@ -12,4 +12,4 @@ if (!rootEl) throw new Error("Root element not found");
 
 // Creating a React root instance and rendering the main App component
 const rootInstance = createRoot(rootEl);
-rootInstance.render(<App />);
+rootInstance.render(<MainNavigation />);

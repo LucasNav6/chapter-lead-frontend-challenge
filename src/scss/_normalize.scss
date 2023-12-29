@@ -1,23 +1,7 @@
-// Fonts
-$font-family: "Roboto", sans-serif;
-$font-size-h1: 1.6rem;
-$font-size-h2: 1.5rem;
-$font-size-h3: 1.4rem;
-$font-size-h4: 1.3rem;
-$font-size-h5: 1.2rem;
-$font-size-h6: 1.1rem;
-$font-size-strong: 1.1rem;
-$font-size-p: 1rem;
-$font-size-small: 0.8rem;
-
-// Border Radius
+// Border radius
 $border-radius: 0.9em;
 
-// Weight
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-bold: 700;
-
+// Global Styles
 * {
   margin: 0;
   padding: 0;
@@ -27,39 +11,40 @@ $font-weight-bold: 700;
   font-family: $font-family;
 }
 
+// Headings
 h1 {
   font-size: $font-size-h1;
   font-weight: $font-weight-bold;
-  font-family: $font-family;
 }
 
+// Paragraphs
 p {
   font-size: $font-size-p;
   font-weight: $font-weight-light;
-  font-family: $font-family;
 }
 
+// Small Text
 small {
   font-size: $font-size-small;
   font-weight: $font-weight-light;
-  font-family: $font-family;
 }
 
+// Strong Text
 strong {
   font-size: $font-size-strong;
   font-weight: $font-weight-bold;
-  font-family: $font-family;
 }
 
+// Buttons
 button {
   font-size: $font-size-p;
   font-weight: $font-weight-regular;
-  font-family: $font-family;
   border-radius: $border-radius;
   background: none;
   border: none;
 }
 
+// Input Fields
 input {
   width: 20rem;
   height: 3rem;
@@ -70,6 +55,7 @@ input {
   border-radius: $border-radius;
 }
 
+// Links
 a {
   text-decoration: none;
   color: inherit;

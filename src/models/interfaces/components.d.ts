@@ -6,6 +6,7 @@ export interface IButton {
   type: "button" | "submit" | "reset";
   isLoading?: boolean;
   icon?: string;
+  arial_label?: string;
 }
 
 export interface ITextInput {
