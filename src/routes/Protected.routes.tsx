@@ -1,32 +1,14 @@
 import React from "react";
-import {Route} from "wouter";
 import useOnUserAuthorized from "./hooks/useOnUserAuthorized";
-import {PROJECT} from "@Models/index";
-import {CreateProject, NotAuthorized, TaskBoard, TaskPage} from "@Pages/index";
-
-type TaskPageParams = {
-  taskId: string;
-};
+import {Outlet} from "react-router-dom";
+import {NotAuthorized} from "@Pages/index";
 
 const ProtectedRoutes = () => {
-  return (
-    <>
-      <Route path={PROJECT.LIST_PROJECT}>
-        {useOnUserAuthorized({isAuthorized: () => <TaskBoard />})}
-      </Route>
+  const isAuthorized = useOnUserAuthorized();
 
-      <Route path={PROJECT.CREATE_PROJECT}>
-        {useOnUserAuthorized({isAuthorized: () => <CreateProject />})}
-      </Route>
+  console.log("isAuthorized", isAuthorized);
 
-      <Route path={"/task/:taskId"}>
-        {(params: TaskPageParams) => {
-          if (!params) return <NotAuthorized />;
-          return <TaskPage taskId={params.taskId} />;
-        }}
-      </Route>
-    </>
-  );
+  return isAuthorized ? <Outlet /> : <NotAuthorized />;
 };
 
 export default ProtectedRoutes;

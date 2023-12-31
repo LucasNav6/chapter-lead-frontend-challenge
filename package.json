@@ -65,11 +65,10 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-hot-toast": "^2.4.1",
-    "react-router-dom": "^6.21.0",
+    "react-router-dom": "^6.21.1",
     "stylelint": "^16.0.2",
     "stylelint-scss": "^6.0.0",
     "uuid": "^9.0.1",
-    "wouter": "^2.12.1",
     "zustand": "^4.4.7"
   }
 }

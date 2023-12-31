@@ -3,11 +3,8 @@ import MainLayout from "@Pages/layout/Main.layout";
 import React from "react";
 import useStore from "src/storage/storage";
 
-interface ITaskPageProps {
-  taskId: string;
-}
-
-const TaskPage: React.FC<ITaskPageProps> = ({taskId}) => {
+const TaskPage: React.FC = () => {
+  const taskId = window.location.pathname.split("/")[2];
   const {projects} = useStore();
   const [projectData] = projects.filter((project) => project._id === taskId);
   const MAX_COLORS = 5;

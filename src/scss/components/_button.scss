@@ -1,19 +1,18 @@
 .component-primary-button,
 .component-primary-button-loading {
+  @include flex-center;
   width: 100%;
+  max-width: $mobile-view;
+  height: 2.5rem;
   background-color: $black;
   color: $white;
   border-radius: $border-radius;
-  border: 0.1em solid $black;
-  padding: 0.4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 0.2em solid $black;
   gap: 0.5em;
   cursor: pointer;
 
   &:hover {
-    outline: 0.2em solid $gray;
+    outline: 0.3em solid $gray;
   }
 }
 
@@ -23,6 +22,7 @@
 
 .component-secondary-button,
 .component-secondary-button-icon-only {
+  @include flex-center;
   width: 100%;
   background-color: transparent;
   border: 0.1em solid $black;
@@ -30,9 +30,6 @@
   border-radius: $border-radius;
   padding: 0.4em;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 0.5em;
 
   &:hover {

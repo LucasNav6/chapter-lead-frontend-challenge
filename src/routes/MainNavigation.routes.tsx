@@ -1,25 +1,32 @@
 import React from "react";
 import ProtectedRoutes from "./Protected.routes";
-import NoProtectedRoutes from "./NoProtected.routes";
-import {Route} from "wouter";
 import NotFound from "@Pages/error/NotFound.page";
-
-type INotFoundRouteParams = {
-  path: string;
-};
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {AUTH, PROJECT} from "@Models/index";
+import LoginPage from "@Pages/auth/Login.page";
+import {CreateProject, TaskBoard} from "@Pages/index";
 
 const MainNavigation = () => {
   return (
-    <>
-      <NoProtectedRoutes />
+    <Router>
+      <Routes>
+        <Route path={AUTH.LOGIN} element={<LoginPage />} />
 
-      <ProtectedRoutes />
+        {/* ---  START PROTECTED ROUTES --- */}
+        <Route element={<ProtectedRoutes />}>
+          <Route path={PROJECT.LIST_PROJECT} element={<TaskBoard />} />
+          <Route path={PROJECT.CREATE_PROJECT} element={<CreateProject />} />
+        </Route>
+        {/* ---  END PROTECTED ROUTES --- */}
 
-      {/* Not found page */}
-      <Route path={"/:path*"}>
-        {(params: INotFoundRouteParams) => <NotFound notFoundRoute={params.path} />}
-      </Route>
-    </>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {/* <Routes>
+        <NoProtectedRoutes />
+        <ProtectedRoutes />
+        <Route path="*" element={<NotFound />} />
+      </Routes> */}
+    </Router>
   );
 };
 

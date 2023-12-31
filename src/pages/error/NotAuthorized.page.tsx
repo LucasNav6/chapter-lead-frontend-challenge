@@ -1,10 +1,12 @@
 import PrimaryButton from "@Components/buttons/primaryButton/PrimaryButton";
-import {AUTH} from "@Models/routes/auth.routes";
+import {AUTH} from "@Models/index";
 import React from "react";
 import {useNavigate} from "react-router-dom";
 
 const NotAuthorized: React.FC = () => {
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
+  const redirectToLogin = () => navigate(AUTH.LOGIN);
+
   return (
     <section className="page404-main-container">
       <article className="page404-container-container">
@@ -20,7 +22,7 @@ const NotAuthorized: React.FC = () => {
           Sorry, but you are not authorized to access this page using the credentials that you
           supplied
         </p>
-        <PrimaryButton text="Sign in" type="button" onClick={() => navigateTo(AUTH.LOGIN)} />
+        <PrimaryButton text="Sign in" type="button" onClick={redirectToLogin} />
       </article>
     </section>
   );

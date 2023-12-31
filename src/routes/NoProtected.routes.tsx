@@ -1,13 +1,13 @@
 import {AUTH} from "@Models/routes/auth.routes";
 import React from "react";
 import LoginPage from "../pages/auth/Login.page";
-import {Route} from "wouter";
+import {Route, Routes} from "react-router-dom";
 
 const NoProtectedRoutes = () => {
   return (
-    <>
-      <Route path={AUTH.LOGIN} component={LoginPage} />
-    </>
+    <Routes>
+      <Route path={AUTH.LOGIN} element={<LoginPage />} />
+    </Routes>
   );
 };
 

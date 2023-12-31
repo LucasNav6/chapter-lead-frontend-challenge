@@ -6,9 +6,10 @@ import AuthLayout from "@Pages/layout/Auth.layout";
 import React from "react";
 import {Toaster} from "react-hot-toast";
 import useShowUserMessage from "./hooks/useShowUserMessage";
-import {PROJECT} from "@Models/routes/project.routes";
+// import {PROJECT} from "@Models/routes/project.routes";
 import useStore from "src/storage/storage";
-import {useLocation} from "wouter";
+import {useNavigate} from "react-router-dom";
+import {PROJECT} from "@Models/index";
 
 const LoginPage: React.FC = () => {
   const [userCredentials, setUserCredentials] = React.useState({email: "", password: ""});
@@ -16,19 +17,18 @@ const LoginPage: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const {setUserUUID, setUserMail} = useStore();
   const {showSuccessMessage, showFailedMessage} = useShowUserMessage();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, navigate] = useLocation();
+  const navigate = useNavigate();
 
   const tryToSignIn = async () => {
     setIsLoading(true);
-    const user = await signInWithEmail(userCredentials.email, userCredentials.password);
-    if (!user.isSuccessful) {
-      showFailedMessage(user.errorMessage);
+    const adapterResponse = await signInWithEmail(userCredentials.email, userCredentials.password);
+    if (!adapterResponse.isSuccessful) {
+      showFailedMessage(adapterResponse.errorMessage);
       setHasCredentialError(true);
     } else {
-      showSuccessMessage(user.successMessage);
-      setUserUUID(user.data.uid || null);
-      setUserMail(user.data.email);
+      showSuccessMessage(adapterResponse.successMessage);
+      setUserUUID(adapterResponse.data.uid || null);
+      setUserMail(adapterResponse.data.email);
       navigate(PROJECT.LIST_PROJECT);
     }
     setIsLoading(false);
@@ -69,12 +69,7 @@ const LoginPage: React.FC = () => {
         />
       </form>
       <footer className="auth-footer-actions">
-        <PrimaryButton
-          text="Sign in"
-          type="button"
-          onClick={async () => await tryToSignIn()}
-          isLoading={isLoading}
-        />
+        <PrimaryButton text="Sign in" type="button" onClick={tryToSignIn} isLoading={isLoading} />
       </footer>
     </AuthLayout>
   );

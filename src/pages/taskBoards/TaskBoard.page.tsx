@@ -5,14 +5,11 @@ import PrimaryButton from "@Components/buttons/primaryButton/PrimaryButton";
 // import {projects} from "src/data";
 import useStore from "src/storage/storage";
 import getProjectsByUser from "@Adapters/projects/getProjectsByUser";
-import {useLocation} from "wouter";
-import {PROJECT} from "@Models/routes/project.routes";
+// import {PROJECT} from "@Models/routes/project.routes";
 
 const TaskBoard: React.FC = () => {
   const {user_mail, user_uuid, projects, setProjects} = useStore();
   const [userNick, setUserNick] = React.useState("");
-  // eslint-disable-next-line
-  const [_, navigate] = useLocation();
 
   useEffect(() => {
     if (!user_mail) return;
@@ -55,12 +52,7 @@ const TaskBoard: React.FC = () => {
       </section>
       <footer className="board-footer">
         <div className="board-footer-button">
-          <PrimaryButton
-            text="New project"
-            icon="uil:plus"
-            type="button"
-            onClick={() => navigate(PROJECT.LIST_PROJECT)}
-          />
+          <PrimaryButton text="New project" icon="uil:plus" type="button" onClick={() => {}} />
         </div>
       </footer>
     </MainLayout>
