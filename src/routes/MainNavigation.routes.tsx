@@ -21,11 +21,6 @@ const MainNavigation = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <Routes>
-        <NoProtectedRoutes />
-        <ProtectedRoutes />
-        <Route path="*" element={<NotFound />} />
-      </Routes> */}
     </Router>
   );
 };
