@@ -1,42 +1,17 @@
-import signInWithEmail from "@Adapters/auth/signInWithEmail.adapter";
-import PrimaryButton from "@Components/buttons/primaryButton/PrimaryButton";
-import PasswordInput from "@Components/inputs/PasswordInput/PasswordInput";
-import TextInput from "@Components/inputs/TextInput/TextInput";
 import AuthLayout from "@Pages/layout/Auth.layout";
 import React from "react";
 import {Toaster} from "react-hot-toast";
-import useShowUserMessage from "./hooks/useShowUserMessage";
-// import {PROJECT} from "@Models/routes/project.routes";
-import useStore from "src/storage/storage";
-import {useNavigate} from "react-router-dom";
-import {PROJECT} from "@Models/index";
+import useCredentials from "./hooks/useCredentials";
+import {PasswordInput, PrimaryButton, TextInput} from "@Components/index";
 
 const LoginPage: React.FC = () => {
-  const [userCredentials, setUserCredentials] = React.useState({email: "", password: ""});
-  const [hasCredentialError, setHasCredentialError] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const {setUserUUID, setUserMail} = useStore();
-  const {showSuccessMessage, showFailedMessage} = useShowUserMessage();
-  const navigate = useNavigate();
+  const {hasCredentialError, isValidateCredentials, changeUserCredentials} = useCredentials();
 
-  const tryToSignIn = async () => {
+  const onSendForm = async () => {
     setIsLoading(true);
-    const adapterResponse = await signInWithEmail(userCredentials.email, userCredentials.password);
-    if (!adapterResponse.isSuccessful) {
-      showFailedMessage(adapterResponse.errorMessage);
-      setHasCredentialError(true);
-    } else {
-      showSuccessMessage(adapterResponse.successMessage);
-      setUserUUID(adapterResponse.data.uid || null);
-      setUserMail(adapterResponse.data.email);
-      navigate(PROJECT.LIST_PROJECT);
-    }
+    await isValidateCredentials();
     setIsLoading(false);
-  };
-
-  const changeUserCredentials = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-    setUserCredentials({...userCredentials, [name]: value});
   };
 
   return (
@@ -69,7 +44,12 @@ const LoginPage: React.FC = () => {
         />
       </form>
       <footer className="auth-footer-actions">
-        <PrimaryButton text="Sign in" type="button" onClick={tryToSignIn} isLoading={isLoading} />
+        <PrimaryButton
+          text="Sign in"
+          type="button"
+          onClick={() => onSendForm()}
+          isLoading={isLoading}
+        />
       </footer>
     </AuthLayout>
   );
