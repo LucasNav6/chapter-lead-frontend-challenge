@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 
-interface IUseToaster {
+export interface IUseToaster {
   type: "success" | "error";
   message: string;
 }

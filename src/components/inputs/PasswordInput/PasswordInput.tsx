@@ -5,7 +5,7 @@ import {Icon} from "@iconify/react";
 const PasswordInput: React.FC<ITextInput> = ({
   text,
   name,
-  placeholder,
+  placeholder = "*****",
   hasError = false,
   onChange
 }) => {

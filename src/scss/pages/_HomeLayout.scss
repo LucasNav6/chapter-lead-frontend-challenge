@@ -33,6 +33,10 @@
   padding: 1rem;
 }
 
+.project-board-task a {
+  display: block;
+}
+
 .task-status {
   display: grid;
   grid-template-columns: 1.5rem auto;
@@ -51,6 +55,14 @@
   background-color: $gray;
   border-radius: $border-radius;
   grid-row: 1 / 3;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.task-fill {
+  width: 100%;
+  background-color: $black;
 }
 
 .task-status p {
@@ -64,7 +76,8 @@
 
 .board-actions {
   margin-top: 1rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 3rem;
   gap: 1rem;
 }
 
@@ -129,11 +142,15 @@
 
 .task,
 .task-done {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
-  background-color: $gray;
-  border: 0.2em solid $gray-dark;
-  padding: 1rem;
-  border-radius: $border-radius;
+
+  & input {
+    width: 1.5rem;
+    border-radius: 0.5rem;
+  }
 }
 
 .task-done {
@@ -144,6 +161,28 @@
 .tasks-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   margin-top: 2rem;
+  gap: 0.5rem;
+
+  & h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.empty-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.loader-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

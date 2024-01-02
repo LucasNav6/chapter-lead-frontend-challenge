@@ -19,6 +19,10 @@
   position: relative;
 }
 
+.component-text-input input {
+  width: 100%;
+}
+
 .component-input-password {
   padding-right: 2.8em !important;
 }

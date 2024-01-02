@@ -16,6 +16,10 @@ h1 {
   font-size: $font-size-h1;
   font-weight: $font-weight-bold;
 }
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+}
 
 // Paragraphs
 p {
@@ -59,4 +63,21 @@ input {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.1rem solid $gray;
+  border-radius: $border-radius;
+  padding: 0.15rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer; /* don't forget this as well */
+}
+
+input[type="checkbox"]:checked {
+  background: $gray-dark content-box;
+  border-color: $gray-dark;
 }

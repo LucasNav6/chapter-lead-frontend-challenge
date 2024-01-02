@@ -15,5 +15,8 @@
       "lines": 85,
       "statements": 85
     }
+  },
+  "paths": {
+    "@Pages": ["src/pages/*"]
   }
 }

@@ -20,7 +20,7 @@ const LoginPage: React.FC = () => {
       <header>
         <img
           className="auth-header-image"
-          src="https://cdn3d.iconscout.com/3d/premium/thumb/lock-3711710-3105432.png?f=webp"
+          src="https://cdn3d.iconscout.com/3d/premium/thumb/lock-2872329-2389488.png"
           alt="padlock"
           width={160}
         />
@@ -38,7 +38,6 @@ const LoginPage: React.FC = () => {
         <PasswordInput
           text="Password"
           name="password"
-          placeholder="************"
           hasError={hasCredentialError}
           onChange={changeUserCredentials}
         />

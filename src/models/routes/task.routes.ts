@@ -1,3 +1,4 @@
 export const TASK = {
-  CREATE_TASK: "/task"
+  VIEW_TASK: "/task",
+  CREATE_TASK: "/create-task"
 };

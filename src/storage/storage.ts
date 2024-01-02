@@ -1,3 +1,4 @@
+import {ITask} from "@Adapters/tasks/createTaskIntoProject";
 import {ProjectItem} from "src/data";
 import {create} from "zustand";
 import {persist} from "zustand/middleware";
@@ -11,6 +12,8 @@ type Store = {
   setUserMail?: (mail: string) => void;
   projects?: ProjectItem[];
   setProjects?: (projects: ProjectItem[]) => void;
+  setTaskIntoProject?: (projectId: string, task: ITask) => void;
+  logOut?: () => void;
 };
 
 const useStore: () => Store = create(
@@ -23,7 +26,10 @@ const useStore: () => Store = create(
       removeUserMail: () => set({user_mail: null}),
       setUserMail: (mail) => set({user_mail: mail}),
       projects: [],
-      setProjects: (projects) => set({projects: projects})
+      setProjects: (projects) => set({projects: projects}),
+      logOut: () => {
+        set({user_uuid: null, user_mail: null, projects: []});
+      }
     }),
     {
       name: "user-storage"

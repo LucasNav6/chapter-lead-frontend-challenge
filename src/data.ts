@@ -20,6 +20,10 @@ export interface ProjectItem {
   tasks: Tasks[];
 }
 
+export interface ProjectItemFirebase {
+  projects: ProjectItem[];
+}
+
 export const projects: ProjectItem[] = [
   {
     _id: "a",

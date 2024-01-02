@@ -6,8 +6,6 @@ import {NotAuthorized} from "@Pages/index";
 const ProtectedRoutes = () => {
   const isAuthorized = useOnUserAuthorized();
 
-  console.log("isAuthorized", isAuthorized);
-
   return isAuthorized ? <Outlet /> : <NotAuthorized />;
 };
 
