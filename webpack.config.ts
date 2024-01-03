@@ -30,7 +30,7 @@ const webpackConfig = (env) => ({
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "build.js",
-    publicPath: "/"
+    publicPath: "./"
   },
   module: {
     rules: [
