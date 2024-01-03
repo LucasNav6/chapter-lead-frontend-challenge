@@ -1,5 +1,5 @@
 # Chapter lead frontend challenge
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/78f50b9a-4a09-4144-853c-f9b74a2f009e/deploy-status)](https://app.netlify.com/sites/teal-pika-7a2f43/deploys)
 > Task management platform with project organization, featuring an authentication system. The app boasts an intuitive interface and provides administrative tools for renaming and deleting projects
 
 ## Acceptance Criteria
