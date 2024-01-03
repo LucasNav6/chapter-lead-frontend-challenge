@@ -1,0 +1,61 @@
+.auth-layout-main {
+  width: $FULL-WIDTH-SCREEN;
+  height: $FULL-HEIGHT-SCREENt;
+  @include flex-center;
+  background: $BACKGROUND-GRADIENT;
+}
+
+.auth-layout-header-image {
+  margin-bottom: $MARGIN-1;
+}
+
+.auth-layout-container {
+  @include flex-column-center;
+  gap: $BOX-GAP;
+  padding: $PADDING-3;
+  border-radius: $BORDER-RADIUS;
+  background-color: $WHITE;
+  box-shadow: $SHADOW;
+}
+
+.auth-layout-container header {
+  @include flex-column-center;
+  width: 100%;
+  min-width: 20rem;
+}
+
+.auth-layout-form {
+  @include flex-column-center;
+  gap: 1em;
+}
+
+.auth-layout-form input {
+  width: 20rem;
+  height: 3rem;
+  border: none;
+  background-color: $GREY;
+  padding: 0 8px;
+  border-radius: $BORDER-RADIUS;
+}
+
+.auth-layout-footer-actions {
+  @include flex-column-center;
+  gap: 10px;
+  width: 100%;
+  width: 20rem;
+}
+
+@media screen and (width <= $MOBILE-VIEW) {
+  .auth-layout-container {
+    width: $FULL-WIDTH-SCREEN;
+    height: $FULL-HEIGHT-SCREENt;
+  }
+
+  .auth-layout-form input {
+    width: 90vw;
+  }
+
+  .auth-layout-footer-actions {
+    width: 90vw;
+  }
+}

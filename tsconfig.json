@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
+    "module": "esnext",
     "sourceMap": true,
     "noImplicitAny": false,
-    "module": "commonjs",
     "target": "es5",
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
@@ -19,13 +15,18 @@
     "moduleResolution": "node",
     "downlevelIteration": true,
     "paths": {
-      "components/*": [
-        "src/components/*"
-      ]
+      "@Tests/*": ["src/__tests__/*"],
+      "@Mocks/*": ["src/_mocks_/*"],
+      "@Adapters/*": ["src/adapters/*"],
+      "@Components/*": ["src/components/*"],
+      "@Models/*": ["src/models/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Routes/*": ["src/routes/*"],
+      "@Services/*": ["src/services/*"],
+      "@Styles/*": ["src/scss/*"],
+      "@Hooks/*": ["src/hooks/*"],
+      "@Storages/*": ["src/storage/*"]
     }
   },
-  "include": [
-    "./src",
-    "./webpack.config.ts"
-  ]
+  "include": ["./src", "./webpack.config.ts"]
 }

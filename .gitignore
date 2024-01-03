@@ -3,3 +3,6 @@ dist/
 .cache/
 .idea/
 package-lock.json
+.vscode/
+coverage/
+.env

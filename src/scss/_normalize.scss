@@ -1,0 +1,73 @@
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $font-size-p;
+  font-weight: $font-weight-light;
+  font-family: $font-family;
+}
+
+// Headings
+h1,
+h2 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-bold;
+}
+
+// Paragraphs
+p,
+small {
+  font-size: $font-size-p;
+  font-weight: $font-weight-light;
+}
+
+// Strong Text
+strong {
+  font-size: $font-size-strong;
+  font-weight: $font-weight-bold;
+}
+
+// Buttons
+button {
+  font-size: $font-size-p;
+  font-weight: $font-weight-regular;
+  border-radius: $BORDER-RADIUS;
+  background: none;
+  border: none;
+}
+
+// Input Fields
+input[type="text"] {
+  width: 20rem;
+  height: 3rem;
+  border: none;
+  border-bottom: 0.1em solid $GREY-dark;
+  background-color: $GREY;
+  padding: 0 8px;
+  border-radius: $BORDER-RADIUS;
+}
+
+// Links
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Checkboxes
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.1rem solid $GREY;
+  border-radius: $BORDER-RADIUS;
+  padding: 0.15rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background: $GREY-dark content-box;
+  border-color: $GREY-dark;
+}

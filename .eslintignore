@@ -1,0 +1,11 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore built files
+dist/
+coverage/
+
+# Ignore specific files
+build.js
+config.js
+webpack.config.ts

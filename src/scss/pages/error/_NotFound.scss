@@ -1,0 +1,38 @@
+.page404-main-container {
+  @include flex-center;
+  width: $FULL-WIDTH-SCREEN;
+  height: $FULL-HEIGHT-SCREENt;
+  background-image: $BACKGROUND-GRADIENT;
+}
+
+.page404-container-container {
+  @include flex-center;
+  flex-direction: column;
+  max-width: $MOBILE-VIEW;
+  text-align: center;
+  background-color: $WHITE;
+  padding: $box-padding;
+  grid: $BOX-GAP;
+
+  p {
+    margin-top: $MARGIN-1;
+  }
+
+  button {
+    margin-top: $MARGIN-3;
+  }
+}
+
+.page404-error-code {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  font-family: $font-family;
+}
+
+@media screen and (width <= $MOBILE-VIEW) {
+  .page404-container-container {
+    min-width: $FULL-WIDTH-SCREEN;
+    height: $FULL-HEIGHT-SCREENt;
+    justify-content: center;
+  }
+}

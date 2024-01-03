@@ -1,0 +1,14 @@
+// Global variables
+@import "./variables/variables";
+
+// Global mixins
+@import "./@mixins/mixins";
+
+// Global rules (custom normalize)
+@import "./normalize";
+
+// Global components
+@import "./components/components";
+
+// Global pages
+@import "./pages/pages";

@@ -1,0 +1,34 @@
+.component-text-input-error {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  color: $error-text;
+  font-size: 0.9em;
+  position: relative;
+}
+
+.component-text-input-error input {
+  background-color: $error-on-text;
+}
+
+.component-text-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  color: $GREY-dark;
+  position: relative;
+}
+
+.component-text-input input {
+  width: 100%;
+}
+
+.component-input-password {
+  padding-right: 2.8em !important;
+}
+
+.component-input-right-icon {
+  position: absolute;
+  right: 1em;
+  top: 2em;
+}
