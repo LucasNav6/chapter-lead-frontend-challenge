@@ -1,5 +1,5 @@
 import React from "react";
-import useStore from "src/storage/storage";
+import useStore from "@Storages/storage";
 import AuthLayout from "@Pages/layout/Auth.layout";
 import useCreateProject from "./hook/useCreateProject";
 import changeForm from "src/functions/changeForm";

@@ -1,0 +1,4 @@
+.task-container {
+  @include flex-column-center;
+  gap: 1rem;
+}

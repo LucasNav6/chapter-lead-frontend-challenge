@@ -17,7 +17,7 @@ const addNewProject = async (project: Project, userUUID: string) => {
         description: project.description,
         due_date: project.due_date,
         total_tasks: project.total_tasks,
-        done_tasks: project.done_tasks
+        total_done: project.total_done
       },
       tasks: []
     };

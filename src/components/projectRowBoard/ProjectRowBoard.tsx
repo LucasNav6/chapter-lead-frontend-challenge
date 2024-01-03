@@ -1,14 +1,14 @@
 import deleteProject from "@Adapters/projects/deleteProjectById";
 import {PrimaryButton, SecondaryButton, SelectWrapper} from "@Components/index";
-import useToaster from "@Hooks/useToaster";
 import {TASK} from "@Models/index";
-import {Project} from "@Models/interfaces/projects";
+import {IProject} from "@Models/interfaces/projects";
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import useStore from "@Storages/storage";
+import {toast} from "react-hot-toast";
 
 interface IProjectRowBoardProps {
-  projectData: Project;
+  projectData: IProject;
   projectId?: string;
   updateProject?: () => void;
   hasOptionsIntoTheBoard?: boolean;
@@ -27,28 +27,27 @@ const ProjectRowBoard: React.FC<IProjectRowBoardProps> = ({
 }) => {
   const navigate = useNavigate();
   const {user_uuid} = useStore();
-  const toaster = useToaster();
-  const PORCENTAJE = (projectData.done_tasks / projectData.total_tasks) * MAX_PORCENTAJE;
+  const PORCENTAJE = (projectData.total_done / projectData.total_tasks) * MAX_PORCENTAJE;
   const generateBgColor = () => projectData.name.length % MAX_COLORS || MAX_COLORS;
   const deleteProjectHandler = async () => {
-    const result = await deleteProject(user_uuid, projectId);
+    await deleteProject(user_uuid, projectId);
     await updateProject();
-    toaster({
-      message: result.message,
-      type: result.isSuccessfully ? "success" : "error"
-    });
   };
   const options = [
-    {name: "Edit", onClick: () => {}},
     {
       name: "Delete",
       textColor: "#ff0000",
-      onClick: deleteProjectHandler
+      onClick: () =>
+        toast.promise(deleteProjectHandler(), {
+          loading: "Deleting project...",
+          success: "Project deleted successfully",
+          error: "There was an error deleting the project"
+        })
     }
   ];
   return (
     <section className={`project-board-task task-color-${generateBgColor()}`}>
-      <a href={hasRedirection && TASK.VIEW_TASK + "/" + projectId}>
+      <a href={hasRedirection ? TASK.VIEW_TASK + "/" + projectId : "#"}>
         <strong>{projectData.name}</strong>
         <p>{projectData.description}</p>
         <div className="task-status">
@@ -60,7 +59,7 @@ const ProjectRowBoard: React.FC<IProjectRowBoardProps> = ({
               <p>No tasks created yet</p>
             ) : (
               <>
-                {projectData.done_tasks} of {projectData.total_tasks} tasks done
+                {projectData.total_done} of {projectData.total_tasks} tasks done
               </>
             )}
           </p>

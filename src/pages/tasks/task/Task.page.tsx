@@ -1,4 +1,4 @@
-import {EmptyState, FooterMenu, ProjectRowBoard} from "@Components/index";
+import {EmptyState, FooterMenu, ProfileHeader, ProjectRowBoard} from "@Components/index";
 import {TASK} from "@Models/index";
 import MainLayout from "@Pages/layout/Main.layout";
 import React from "react";
@@ -12,6 +12,7 @@ const Task: React.FC = () => {
   const thereIsTasks = projectData.tasks.length !== 0;
   return (
     <MainLayout>
+      <ProfileHeader canUserGoBack={true} />
       <ProjectRowBoard
         projectData={projectData.project}
         hasOptionsIntoTheBoard={false}
@@ -22,7 +23,7 @@ const Task: React.FC = () => {
         {!thereIsTasks ? (
           <EmptyState title="There is not tasks" redirectTo={TASK.CREATE_TASK + "/" + taskId} />
         ) : (
-          <section>
+          <section className="task-container">
             {projectData.tasks.map((task) => {
               return <TaskRow key={task._id} task={task} projectId={projectData._id} />;
             })}

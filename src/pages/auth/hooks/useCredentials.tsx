@@ -1,7 +1,7 @@
 import signInWithEmail from "@Adapters/auth/signInWithEmail.adapter";
 import React from "react";
 import useToaster from "@Hooks/useToaster";
-import useStore from "src/storage/storage";
+import useStore from "@Storages/storage";
 import {PROJECT} from "@Models/index";
 import {useNavigate} from "react-router-dom";
 

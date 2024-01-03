@@ -1,6 +1,7 @@
 import MainNavigation from "@Routes/MainNavigation.routes";
 import React from "react";
 import {createRoot} from "react-dom/client";
+import {Loader} from "./components";
 
 // Importing the global styles
 import "@Styles/global.scss";
@@ -12,4 +13,8 @@ if (!rootEl) throw new Error("Root element not found");
 
 // Creating a React root instance and rendering the main App component
 const rootInstance = createRoot(rootEl);
-rootInstance.render(<MainNavigation />);
+rootInstance.render(
+  <React.Suspense fallback={<Loader />}>
+    <MainNavigation />
+  </React.Suspense>
+);

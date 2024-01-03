@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   due_date: string;
   total_tasks: number;
-  done_tasks: number;
+  total_done: number;
 }
 
 export interface Tasks {
@@ -32,7 +32,7 @@ export const projects: ProjectItem[] = [
       description: "Plan the next holidays in Norway",
       due_date: "01-01-2023",
       total_tasks: 10,
-      done_tasks: 8
+      total_done: 8
     },
     tasks: [
       {

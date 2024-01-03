@@ -28,9 +28,11 @@
   border: 0.1em solid $black;
   color: $black;
   border-radius: $BORDER-RADIUS;
-  padding: 0.4em;
+  height: 2.5rem;
+  padding: 1rem;
   cursor: pointer;
   gap: 0.5em;
+  background-color: $GREY;
 
   &:hover {
     outline: 0.2em solid $GREY;
@@ -40,4 +42,8 @@
     padding: 0.4em 0.4em;
     width: 40px;
   }
+}
+
+.header-profile-back-button {
+  width: fit-content;
 }

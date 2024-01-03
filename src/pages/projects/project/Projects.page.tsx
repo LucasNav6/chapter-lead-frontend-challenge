@@ -1,9 +1,8 @@
 import React from "react";
 import {PROJECT} from "@Models/index";
-import {EmptyState, FooterMenu, Loader, ProjectRowBoard} from "@Components/index";
+import {EmptyState, FooterMenu, Loader, ProfileHeader, ProjectRowBoard} from "@Components/index";
 import MainLayout from "@Pages/layout/Main.layout";
 import useGetProjectsByUser from "./hooks/useGetProjectsByUser";
-import ProfileHeader from "./components/profileHeader/ProfileHeader";
 
 const Projects: React.FC = () => {
   const projectsByUser = useGetProjectsByUser();
@@ -13,7 +12,7 @@ const Projects: React.FC = () => {
   if (projectsByUser.isLoading) return <Loader />;
   return (
     <MainLayout>
-      <ProfileHeader {...projectsByUser} />
+      <ProfileHeader canUserGoBack={false} />
 
       {/* Render an empty state or the projects */}
       <section className="project-board">

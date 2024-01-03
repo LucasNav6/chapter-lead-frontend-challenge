@@ -1,18 +1,18 @@
-export interface ProjectItem {
+export interface IProjectItem {
   _id: string;
-  project: Project;
-  tasks: Tasks[];
+  project: IProject;
+  tasks: ITasks[];
 }
 
-export interface Project {
+export interface IProject {
   name: string;
   description: string;
   due_date: string;
   total_tasks: number;
-  done_tasks: number;
+  total_done: number;
 }
 
-export interface Tasks {
+export interface ITasks {
   _id: string;
   name: string;
   description: string;

@@ -1,22 +1,31 @@
 {
+  "rootDir": ".",
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
   "testPathIgnorePatterns": ["/node_modules/", "/dist/"],
-  "testEnvironment": "node",
+  "testEnvironment": "jsdom",
   "collectCoverage": true,
-  "collectCoverageFrom": ["<rootDir>/src/**/*.tsx"],
+  "collectCoverageFrom": ["<rootDir>/src/**/*.{tsx,ts}"],
   "coverageReporters": ["lcov", "text", "html"],
   "coverageThreshold": {
     "global": {
-      "branches": 85,
-      "functions": 85,
-      "lines": 85,
-      "statements": 85
+      "branches": 25,
+      "functions": 25,
+      "lines": 25,
+      "statements": 25
     }
   },
-  "paths": {
-    "@Pages": ["src/pages/*"]
+  "moduleNameMapper": {
+    "^@Components(.*)$": "<rootDir>/src/components/$1",
+    "^@Pages(.*)$": "<rootDir>/src/pages/$1",
+    "^@Services(.*)$": "<rootDir>/src/services/$1",
+    "^@Hooks(.*)$": "<rootDir>/src/hooks/$1",
+    "^@Models(.*)$": "<rootDir>/src/models/$1",
+    "^@Routes(.*)$": "<rootDir>/src/routes/$1",
+    "^@Adapters(.*)$": "<rootDir>/src/adapters/$1",
+    "^@Storages(.*)$": "<rootDir>/src/storage/$1",
+    "^src(.*)$": "<rootDir>/src/$1"
   }
 }

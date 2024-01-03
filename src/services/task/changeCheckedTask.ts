@@ -6,28 +6,32 @@ const checkedTaskById = async (projectId: string, userUUID: string, taskId: stri
   try {
     const db = getFirestore(app);
     const oldState = await getProjectsByUserAdapter(userUUID);
+    console.log(oldState);
 
     const state = oldState.projects.map((project) => {
       if (project._id === projectId) {
+        const task = project.tasks.map((t) => {
+          if (t._id === taskId) {
+            return {
+              ...t,
+              done: !t.done
+            };
+          }
+          return t;
+        });
         return {
           _id: project._id,
           project: {
             ...project.project,
-            total_tasks: project.project.total_tasks + 1
+            total_done: task.filter((t) => t.done).length
           },
-          tasks: project.tasks.map((task) => {
-            if (task._id === taskId) {
-              return {
-                ...task,
-                done: !task.done
-              };
-            }
-            return task;
-          })
+          tasks: task
         };
       }
       return project;
     });
+    console.log(oldState);
+    console.log(state);
     await setDoc(doc(db, "projects", userUUID), {projects: state});
     return {
       isSuccessfully: true,

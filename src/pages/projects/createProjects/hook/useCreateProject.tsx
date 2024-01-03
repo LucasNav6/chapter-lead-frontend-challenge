@@ -14,7 +14,7 @@ const useCreateProject = ({projectForm, user_uuid}) => {
         description: projectForm.description,
         due_date: "",
         total_tasks: 0,
-        done_tasks: 0
+        total_done: 0
       },
       user_uuid
     );

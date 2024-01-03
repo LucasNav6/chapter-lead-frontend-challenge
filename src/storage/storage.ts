@@ -1,4 +1,4 @@
-import {ProjectItem} from "@Models/interfaces/projects";
+import {IProjectItem} from "@Models/interfaces/projects";
 import {create} from "zustand";
 import {persist} from "zustand/middleware";
 
@@ -6,14 +6,14 @@ import {persist} from "zustand/middleware";
 type TStoreInitialState = {
   user_uuid?: string | null;
   user_mail?: string | null;
-  projects?: ProjectItem[];
+  projects?: IProjectItem[];
 };
 interface IStore extends TStoreInitialState {
   removeUserUUID?: () => void;
   setUserUUID?: (uuid: string) => void;
   removeUserMail?: () => void;
   setUserMail?: (mail: string) => void;
-  setProjects?: (projects: ProjectItem[]) => void;
+  setProjects?: (projects: IProjectItem[]) => void;
   logOut?: () => void;
 }
 

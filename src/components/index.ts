@@ -6,6 +6,7 @@ import Loader from "./loader/Loader";
 import SelectWrapper from "./selectWrapper/SelectWrapper";
 import EmptyState from "./emptyState/EmptyState";
 import FooterMenu from "./FooterMenu/FooterMenu";
+import ProfileHeader from "./profileHeader/ProfileHeader";
 import ProjectRowBoard from "./projectRowBoard/ProjectRowBoard";
 
 export {
@@ -17,5 +18,6 @@ export {
   SelectWrapper,
   EmptyState,
   FooterMenu,
-  ProjectRowBoard
+  ProjectRowBoard,
+  ProfileHeader
 };
