@@ -1,27 +1,16 @@
 import React from "react";
 import TextInput from "@Components/inputs/TextInput/TextInput";
-import {PrimaryButton} from "@Components/index";
+import {FooterMenu} from "@Components/index";
 import MainLayout from "@Pages/layout/Main.layout";
-import {useNavigate, useParams} from "react-router-dom";
-import useStore from "src/storage/storage";
-import createNewTaskIntoProject from "@Adapters/tasks/createTaskIntoProject";
-import useToaster from "@Hooks/useToaster";
-import {TASK} from "@Models/index";
-import getProjectsByUserAdapter from "@Adapters/projects/getProjectsByUser";
+import useCreateTask from "./hook/useCreateTask";
+import changeForm from "src/functions/changeForm";
 
 const CreateTask = () => {
   const [projectForm, setProjectName] = React.useState({
     name: "",
     description: ""
   });
-  const toaster = useToaster();
-  const navigate = useNavigate();
-  const onChangeProjectForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-    setProjectName({...projectForm, [name]: value});
-  };
-  const {projectId} = useParams();
-  const {user_uuid, setProjects} = useStore();
+  const createTaskHandler = useCreateTask();
   return (
     <MainLayout>
       <header>
@@ -33,38 +22,16 @@ const CreateTask = () => {
           text="project name"
           placeholder="Ex: Prepare the bags"
           name="name"
-          onChange={onChangeProjectForm}
+          onChange={(e) => changeForm(e, setProjectName)}
         />
         <TextInput
           text="project description"
           placeholder="Description"
           name="description"
-          onChange={onChangeProjectForm}
+          onChange={(e) => changeForm(e, setProjectName)}
         />
       </form>
-      <footer className="auth-footer-actions">
-        <PrimaryButton
-          text="Create new task"
-          icon="uil:plus"
-          type="button"
-          onClick={async () => {
-            const response = await createNewTaskIntoProject(projectId, user_uuid, projectForm);
-            if (response.isSuccessfully) {
-              setTimeout(() => {
-                toaster({
-                  message: "Task created successfully",
-                  type: response.isSuccessfully ? "success" : "error"
-                });
-              }, 1000);
-              const {projects} = await getProjectsByUserAdapter(user_uuid);
-              setProjects(projects);
-              navigate(TASK.VIEW_TASK + "/" + projectId);
-            } else {
-              toaster({type: "error", message: "Error creating task"});
-            }
-          }}
-        />
-      </footer>
+      <FooterMenu buttonText="Create new task" onClick={() => createTaskHandler(projectForm)} />
     </MainLayout>
   );
 };
