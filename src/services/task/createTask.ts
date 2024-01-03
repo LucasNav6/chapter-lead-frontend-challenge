@@ -16,7 +16,7 @@ const createTask = async (projectId: string, userUUID: string, task: ITask) => {
           _id: project._id,
           project: {
             ...project.project,
-            total_tasks: project.project.total_tasks + 1
+            total_tasks: project.tasks.length + 1
           },
           tasks: [
             ...project.tasks,
