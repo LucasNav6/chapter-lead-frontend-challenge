@@ -1,7 +1,16 @@
-import TaskBoard from "./taskBoards/TaskBoard.page";
-import TaskPage from "./task/TaskPage.page";
-import NotAuthorized from "./error/NotAuthorized.page";
-import NotFound from "./error/NotFound.page";
-import CreateProject from "./createProjects/CreateProjects";
+// CREATION PAGES
+import CreateProject from "./createProjects/useCreateProjects";
+import CreateTask from "./createTask/CreateTask";
 
-export {TaskBoard, TaskPage, NotAuthorized, NotFound, CreateProject};
+// AUTHENTICATION PAGES
+import Login from "./auth/Login.page";
+
+// ERROR PAGES
+import NotFound from "./error/NotFound.page";
+import NotAuthorized from "./error/NotAuthorized.page";
+
+// TASK PAGES
+import Projects from "./project/Projects.page";
+import Tasks from "./task/Task.page";
+
+export {CreateProject, CreateTask, Login, NotFound, NotAuthorized, Projects, Tasks};
