@@ -24,7 +24,8 @@
       "@Routes/*": ["src/routes/*"],
       "@Services/*": ["src/services/*"],
       "@Styles/*": ["src/scss/*"],
-      "@Hooks/*": ["src/hooks/*"]
+      "@Hooks/*": ["src/hooks/*"],
+      "@Storages/*": ["src/storage/*"]
     }
   },
   "include": ["./src", "./webpack.config.ts"]
