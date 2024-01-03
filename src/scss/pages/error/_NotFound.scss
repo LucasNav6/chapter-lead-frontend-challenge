@@ -1,25 +1,25 @@
 .page404-main-container {
   @include flex-center;
-  width: $full-width;
-  height: $full-height;
-  background-image: $background-gradient;
+  width: $FULL-WIDTH-SCREEN;
+  height: $FULL-HEIGHT-SCREENt;
+  background-image: $BACKGROUND-GRADIENT;
 }
 
 .page404-container-container {
   @include flex-center;
   flex-direction: column;
-  max-width: $mobile-view;
+  max-width: $MOBILE-VIEW;
   text-align: center;
-  background-color: $white;
+  background-color: $WHITE;
   padding: $box-padding;
-  grid: $grid-gap;
+  grid: $BOX-GAP;
 
   p {
-    margin-top: $margin-1;
+    margin-top: $MARGIN-1;
   }
 
   button {
-    margin-top: $margin-3;
+    margin-top: $MARGIN-3;
   }
 }
 
@@ -29,10 +29,10 @@
   font-family: $font-family;
 }
 
-@media screen and (width <= $mobile-view) {
+@media screen and (width <= $MOBILE-VIEW) {
   .page404-container-container {
-    min-width: $full-width;
-    height: $full-height;
+    min-width: $FULL-WIDTH-SCREEN;
+    height: $FULL-HEIGHT-SCREENt;
     justify-content: center;
   }
 }

@@ -1,40 +1,7 @@
-.profile-picture {
-  width: 3.8rem;
-  height: 3.8em;
-  border-radius: 0.9em;
-  border: 0.2em solid $gray;
-}
-
-.all-project-header {
-  max-width: 35rem;
-  margin: 0 auto 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .task-count {
-  color: $gray-dark;
+  color: $GREY-dark;
   font-size: 0.7em;
   text-align: $font-weight-light;
-}
-
-.project-board {
-  max-width: 35rem;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.project-board-task {
-  width: 100%;
-  border-radius: 0.9em;
-  padding: 1rem;
-}
-
-.project-board-task a {
-  display: block;
 }
 
 .task-status {
@@ -48,12 +15,12 @@
 
 .task-status span {
   content: "";
-  color: $white;
+  color: $WHITE;
   font-size: 0.7em;
   text-align: $font-weight-light;
-  border: 0.1em solid $gray-dark;
-  background-color: $gray;
-  border-radius: $border-radius;
+  border: 0.1em solid $GREY-dark;
+  background-color: $GREY;
+  border-radius: $BORDER-RADIUS;
   grid-row: 1 / 3;
   display: flex;
   align-items: flex-end;
@@ -67,33 +34,6 @@
 
 .task-status p {
   font-weight: $font-weight-bold;
-}
-
-.project-board-task strong {
-  font-size: 2em;
-  width: 100px;
-}
-
-.board-actions {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: auto 3rem;
-  gap: 1rem;
-}
-
-.board-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: 3em 1em 1em 1em;
-  width: 100vw;
-  display: flex;
-  justify-content: flex-end;
-  background-image: linear-gradient(to top, $gray, $gray, transparent);
-}
-
-.board-footer-button {
-  width: 12em;
 }
 
 .task-color-1 {
@@ -124,22 +64,6 @@
   padding: 1rem;
 }
 
-.project-add-new-container {
-  width: 100%;
-  height: 3rem;
-  position: relative;
-  top: -1rem;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
-  background-color: rebeccapurple;
-}
-
-.project-add-new {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
 .task,
 .task-done {
   display: flex;
@@ -155,7 +79,7 @@
 
 .task-done {
   text-decoration: line-through;
-  color: $gray-dark;
+  color: $GREY-dark;
 }
 
 .tasks-container {

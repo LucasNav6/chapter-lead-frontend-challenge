@@ -19,7 +19,7 @@ const LoginPage: React.FC = () => {
       <Toaster position="bottom-center" reverseOrder={true} />
       <header>
         <img
-          className="auth-header-image"
+          className="auth-layout-header-image"
           src="https://cdn3d.iconscout.com/3d/premium/thumb/lock-2872329-2389488.png"
           alt="padlock"
           width={160}
@@ -27,7 +27,7 @@ const LoginPage: React.FC = () => {
         <h1>Welcome back</h1>
         <p>Please enter your details</p>
       </header>
-      <form className="auth-form">
+      <form className="auth-layout-form">
         <TextInput
           text="Email address"
           name="email"
@@ -42,7 +42,7 @@ const LoginPage: React.FC = () => {
           onChange={changeUserCredentials}
         />
       </form>
-      <footer className="auth-footer-actions">
+      <footer className="auth-layout-footer-actions">
         <PrimaryButton
           text="Sign in"
           type="button"

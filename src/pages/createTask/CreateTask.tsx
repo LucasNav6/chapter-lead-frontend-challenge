@@ -17,7 +17,7 @@ const CreateTask = () => {
         <h1>Create new task</h1>
         <p>Please enter the task details to create it</p>
       </header>
-      <form className="auth-form">
+      <form className="auth-layout-form">
         <TextInput
           text="project name"
           placeholder="Ex: Prepare the bags"

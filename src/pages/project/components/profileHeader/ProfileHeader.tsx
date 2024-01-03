@@ -22,7 +22,7 @@ const ProfileHeader = ({userNick, user_mail, projects, logOut}) => {
   };
 
   return (
-    <header className="all-project-header">
+    <header className="project-header">
       {/* Greeting */}
       <div>
         <p>Hello, {userNick} 👋</p>
@@ -33,7 +33,7 @@ const ProfileHeader = ({userNick, user_mail, projects, logOut}) => {
 
       {/* Profile actions */}
       <SelectWrapper options={profileOptions}>
-        <img {...nicknameImgUrl} className="profile-picture" />
+        <img {...nicknameImgUrl} className="project-profile-picture" />
       </SelectWrapper>
     </header>
   );

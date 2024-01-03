@@ -9,8 +9,8 @@
   top: 100%;
   right: 0;
   width: 100%;
-  background-color: $white;
-  border-radius: $border-radius;
+  background-color: $WHITE;
+  border-radius: $BORDER-RADIUS;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   z-index: 1;
   list-style: none;
@@ -33,7 +33,7 @@
 }
 
 .select-wrapper li:hover {
-  background-color: $gray;
+  background-color: $GREY;
 }
 
 /* ----------------------------------------------

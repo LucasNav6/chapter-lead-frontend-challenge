@@ -11,7 +11,7 @@ const NotAuthorized: React.FC = () => {
     <section className="page404-main-container">
       <article className="page404-container-container">
         <img
-          className="auth-header-image"
+          className="auth-layout-header-image"
           src="https://cdn3d.iconscout.com/3d/premium/thumb/stop-hand-gesture-8196933-6516362.png"
           alt="stop hand"
           width={100}

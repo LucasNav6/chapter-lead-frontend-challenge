@@ -3,10 +3,12 @@ $primary-color: #d83f31;
 $primary-color-dark: #f95530;
 
 // General colors
-$white: #fff;
+$WHITE: #fff;
 $black: #000;
-$gray: #d2d2d2df;
-$gray-dark: #999b9b;
+$GREY: #d2d2d2df;
+$GREY-dark: #999b9b;
 $error-text: #e43232;
 $error-on-text: #ff000010;
-$background-gradient: radial-gradient(circle 311px at 8.6% 27.9%, #3e93fc91 12.9%, #efb7c070 91.2%);
+$BACKGROUND-GRADIENT: radial-gradient(circle 311px at 8.6% 27.9%, #3e93fc91 12.9%, #efb7c070 91.2%);
+
+$SHADOW: 0 10px 15px -3px #0000001a;

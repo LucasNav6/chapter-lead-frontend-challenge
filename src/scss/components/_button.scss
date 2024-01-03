@@ -2,22 +2,22 @@
 .component-primary-button-loading {
   @include flex-center;
   width: 100%;
-  max-width: $mobile-view;
+  max-width: $MOBILE-VIEW;
   height: 2.5rem;
   background-color: $black;
-  color: $white;
-  border-radius: $border-radius;
+  color: $WHITE;
+  border-radius: $BORDER-RADIUS;
   border: 0.2em solid $black;
   gap: 0.5em;
   cursor: pointer;
 
   &:hover {
-    outline: 0.3em solid $gray;
+    outline: 0.3em solid $GREY;
   }
 }
 
 .component-primary-button-lading {
-  background-color: $gray-dark;
+  background-color: $GREY-dark;
 }
 
 .component-secondary-button,
@@ -27,13 +27,13 @@
   background-color: transparent;
   border: 0.1em solid $black;
   color: $black;
-  border-radius: $border-radius;
+  border-radius: $BORDER-RADIUS;
   padding: 0.4em;
   cursor: pointer;
   gap: 0.5em;
 
   &:hover {
-    outline: 0.2em solid $gray;
+    outline: 0.2em solid $GREY;
   }
 
   &-icon-only {

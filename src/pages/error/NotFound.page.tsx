@@ -10,7 +10,7 @@ const NotFound: React.FC = () => {
     <section className="page404-main-container">
       <article className="page404-container-container">
         <img
-          className="auth-header-image"
+          className="auth-layout-header-image"
           src="https://cdn3d.iconscout.com/3d/premium/thumb/magnifying-glass-4329859-3599670.png"
           alt="padlock"
           width={100}

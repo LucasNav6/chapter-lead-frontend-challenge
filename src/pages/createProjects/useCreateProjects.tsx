@@ -18,12 +18,12 @@ const CreateProject = () => {
   };
   return (
     <AuthLayout>
-      <form className="auth-form">
+      <form className="auth-layout-form">
         <header>
-          <img {...PROJECTS_ICON} className="auth-header-image" width={160} />
+          <img {...PROJECTS_ICON} className="auth-layout-header-image" width={160} />
           <h1>Create new project</h1>
         </header>
-        <form className="auth-form">
+        <form className="auth-layout-form">
           <TextInput
             text="project name"
             placeholder="Ex: Travel to Lilabfest"
