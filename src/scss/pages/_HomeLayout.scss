@@ -5,7 +5,7 @@
   border: 0.2em solid $gray;
 }
 
-.taskBoard-header {
+.all-project-header {
   max-width: 35rem;
   margin: 0 auto 1rem auto;
   display: flex;
@@ -13,7 +13,7 @@
   justify-content: space-between;
 }
 
-.task-count-gray {
+.task-count {
   color: $gray-dark;
   font-size: 0.7em;
   text-align: $font-weight-light;
@@ -120,7 +120,7 @@
   background: radial-gradient(circle, #eed991 0%, #ccf7f4 100%);
 }
 
-.main-layout-main {
+.main-layout {
   padding: 1rem;
 }
 
