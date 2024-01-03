@@ -33,12 +33,6 @@ const CreateTask = () => {
           name="name"
           onChange={(e) => changeForm(e, setProjectName)}
         />
-        <TextInput
-          text="project description"
-          placeholder="Description"
-          name="description"
-          onChange={(e) => changeForm(e, setProjectName)}
-        />
       </form>
       <FooterMenu buttonText="Create new task" onClick={() => createTaskHandler()} />
     </MainLayout>
