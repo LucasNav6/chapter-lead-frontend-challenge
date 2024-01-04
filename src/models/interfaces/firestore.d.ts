@@ -25,3 +25,29 @@ export interface StsTokenManager {
   accessToken: string;
   expirationTime: number;
 }
+
+export interface Project {
+  name: string;
+  description: string;
+  due_date: string;
+  total_tasks: number;
+  total_done: number;
+}
+
+export interface Tasks {
+  _id: string;
+  name: string;
+  description: string;
+  due_date: string;
+  done: boolean;
+}
+
+export interface ProjectItem {
+  _id: string;
+  project: Project;
+  tasks: Tasks[];
+}
+
+export interface ProjectItemFirebase {
+  projects: ProjectItem[];
+}

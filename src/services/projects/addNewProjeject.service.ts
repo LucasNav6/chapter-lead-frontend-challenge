@@ -1,10 +1,10 @@
 import {doc, getFirestore, setDoc} from "@firebase/firestore";
-import {Project} from "src/data";
 import app from "src/firebase/config";
 import getProjectsByUserAdapter from "@Adapters/projects/getProjectsByUser";
 import {v4 as uuidv4} from "uuid";
+import {IProject} from "@Models/interfaces/projects";
 
-const addNewProject = async (project: Project, userUUID: string) => {
+const addNewProject = async (project: IProject, userUUID: string) => {
   try {
     const db = getFirestore(app);
     const uuid = uuidv4();

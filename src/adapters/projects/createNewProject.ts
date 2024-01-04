@@ -1,7 +1,7 @@
+import {IProject} from "@Models/interfaces/projects";
 import addNewProject from "@Services/projects/addNewProjeject.service";
-import {Project} from "src/data";
 
-const createNewProject = async (project: Project, userUUID: string) => {
+const createNewProject = async (project: IProject, userUUID: string) => {
   const projectResponse = await addNewProject(project, userUUID);
   return projectResponse;
 };

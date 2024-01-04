@@ -3,9 +3,9 @@ import useStore from "@Storages/storage";
 import AuthLayout from "@Pages/layout/Auth.layout";
 import useCreateProject from "./hook/useCreateProject";
 import changeForm from "src/functions/changeForm";
-import {FooterMenu, TextInput} from "@Components/index";
+import {DateInput, PrimaryButton, TextInput} from "@Components/index";
 
-const INIT_STATE = {name: "", description: ""};
+const INIT_STATE = {name: "", description: "", dueDate: ""};
 
 const CreateProject = () => {
   const {user_uuid} = useStore();
@@ -36,8 +36,9 @@ const CreateProject = () => {
             name="description"
             onChange={onChangeProjectForm}
           />
+          <DateInput text="project due date" name="dueDate" onChange={onChangeProjectForm} />
+          <PrimaryButton text="Create new project" type="button" onClick={createProject} />
         </form>
-        <FooterMenu buttonText="Create new project" onClick={createProject} />
       </form>
     </AuthLayout>
   );

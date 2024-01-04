@@ -31,8 +31,6 @@ const createTask = async (projectId: string, userUUID: string, task: ITask) => {
       }
       return project;
     });
-    console.log(oldState.projects);
-    console.log(state);
     await setDoc(doc(db, "projects", userUUID), {projects: state});
     return {
       isSuccessfully: true,
