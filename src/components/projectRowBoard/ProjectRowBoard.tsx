@@ -28,7 +28,6 @@ const ProjectRowBoard: React.FC<IProjectRowBoardProps> = ({
   const navigate = useNavigate();
   const {user_uuid} = useStore();
   const getDueDate = projectData.due_date ? new Date(projectData.due_date) : new Date();
-  console.log(getDueDate);
   const diffDays = Math.ceil((getDueDate.getTime() - Date.now()) / (1000 * 3600 * 24));
   const PORCENTAJE = (projectData.total_done / projectData.total_tasks) * MAX_PORCENTAJE;
   const generateBgColor = () => projectData.name.length % MAX_COLORS || MAX_COLORS;

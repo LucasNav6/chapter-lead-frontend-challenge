@@ -1,10 +1,10 @@
 import createNewProject from "@Adapters/projects/createNewProject";
 import deleteProject from "@Adapters/projects/deleteProjectById";
 import getProjectsByUserAdapter from "@Adapters/projects/getProjectsByUser";
+import {IProject} from "@Models/interfaces/projects";
 import addNewProject from "@Services/projects/addNewProjeject.service";
 import deleteProjectService from "@Services/projects/deleteProject.service";
 import getProjectsByUser from "@Services/projects/getProjectsByUser.service";
-import {Project} from "src/data";
 
 // Mockea el módulo que contiene addNewProject
 jest.mock("@Services/projects/addNewProjeject.service");
@@ -17,7 +17,7 @@ describe("createNewProject", () => {
   it("should create a new project successfully", async () => {
     (addNewProject as jest.Mock).mockResolvedValue("SUCCESS");
 
-    const project: Project = {
+    const project: IProject = {
       name: "test",
       description: "test",
       due_date: "2021-01-01",
